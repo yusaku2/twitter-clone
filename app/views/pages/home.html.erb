@@ -1,2 +1,21 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="col-xs-offset-3 col-xs-6">
+    Tweets!!!
+  <h1>Tweet Page</h1>
+  <%= simple_form_for @tweet do |f| %>
+    <%= f.input :content, label: :content, placeholder: "Less than 140 characters"%>
+    <%= f.hidden_field :post_time, value: DateTime.now %>
+    <%= f.submit %>
+    <% end %>
+
+  <%= @tweets.each do |tweet| %>
+    <div class="card">
+      <%= tweet.user_id %>
+      <%= tweet.content %>
+    </div>
+  <% end %> %>
+
+
+  </div>
+
+</div>
